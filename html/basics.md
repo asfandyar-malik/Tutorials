@@ -11,10 +11,10 @@ All HTML elements can have **Attributes**
 
 Attributes provide additional information about elements
 
-HTML elemnts are inititated by **tags**
+HTML elements are inititated by **opening tags**
 
 
-**Javascript** provides an API to interact with html documetns and elements.
+💎 **Javascript** provides an API to interact with html documetns and elements.
 
 ```
 <script>
