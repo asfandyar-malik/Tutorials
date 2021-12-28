@@ -20,15 +20,15 @@ Javascript has 6 primitive datatypes:
 
 Loosely coupled: so variables can be anything. 
 
-
+---
 **🤚Javascript Arrays**
 
 Javascript has Arrays, which can be dynamically sized so no memory has to be reserved for them. 
 
 ``let scores = new Array(9,10,8,7,6);``
 
----
-**map** in javascripts, make `for loops` cleaner. You can transform arrays elements in a cleaner way. 
+
+**map** in javascripts are there to make `for loops` cleaner. You can transform arrays elements in a cleaner way. 
 
 ```
 let circles = [
@@ -55,7 +55,7 @@ console.log(areas);
 
 which outputs: `[314, 2827, 7853]`
 
-To make it further shorter, you can pass map as an anonymous function
+To make it further shorter, you can pass map as an **Anonymous function**
 
 ```
 let areas = circles.map(function(radius){
@@ -70,7 +70,7 @@ In ES6, you can pass it with `arrow function`
 let areas = circles.map(radius => Math.floor(Math.PI * radius * radius));
 console.log(areas);
 ```
-
+---
 **🤚Javascript Functions***
 
 Functions in JavaScript are first-class objects, which means you can store functions in variables, pass them to other functions as arguments, and return them from other functions as values.
@@ -95,7 +95,6 @@ The callback() function takes three arguments:
 
 The currentElement is required while the index and array arguments are optional.
 
-
 It’s important to note that the map() method does not change the original array, it creates a new array of all elements that have been transformed by the callback function.
 
 
@@ -110,7 +109,15 @@ Asynchronicity means that if JavaScript has to wait for an operation to complete
 Note that JavaScript is a single-threaded programming language. It carries asynchronous operations via the callback queue and event loop.
 
 
----
+**Simple Callback Real Life example**
+
+*Imagine this scenario: you are expecting a package in a couple of days. The package is a gift for your neighbor. Therefore, once you get the package, you want it brought over to the neighbors. You are out of town, and so you leave instructions for your spouse.*
+
+*You could tell them to get the package and bring it to the neighbors. If your spouse was as stupid as a computer, they would sit at the door and wait for the package until it came (NOT DOING ANYTHING ELSE) and then once it came they would bring it over to the neighbors. But there's a better way. Tell your spouse that ONCE they receive the package, they should bring it over the neighbors. Then, they can go about life normally UNTIL they receive the package.*
+
+*In our example, the receiving of the package is the "event" and the bringing it to the neighbors is the "callback". Your spouse "runs" your instructions to bring the package over only when the package arrives. Much better!*
+
+
 
 **ANONYMOUS FUNCTIONS**
 
@@ -120,3 +127,5 @@ ES6 introduced arrow function expression that provides a shorthand for declaring
 
 ``` let show = () => console.log('Anonymous function'); ```
 
+
+---
