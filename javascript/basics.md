@@ -75,6 +75,10 @@ console.log(areas);
 
 Functions in JavaScript are first-class objects, which means you can store functions in variables, pass them to other functions as arguments, and return them from other functions as values.
 
+A function implicitly returns undefined, when no return value is specified. 
+
+As functions are objects, you can return them from a function. 
+
 
 **CALLBACK FUNCTIONS**
 
@@ -138,3 +142,188 @@ ES6 introduced arrow function expression that provides a shorthand for declaring
 3. The code seems more self-contained and readable when handlers are defined right inside the code that's calling them. You can read the code in almost sequential fashion rather than having to go find the function with that name. 
 
 ---
+
+**Function Hoisting**
+In javascript we can use a function before it is declared. 
+
+```
+showMe(); // a hoisting example
+
+function showMe(){
+    console.log('an hoisting example');
+}
+```
+
+
+---
+**forEach() Method**
+
+Javascript Array forEach() method. This is a replacement to for loop where we iterate through the whole array. 
+
+```Array.forEach(callback [, thisArg]); ```
+
+forEach method executed a **callback** on every on every element of an array. 
+
+
+**reduce() Method**
+
+This method is there to reduce the array to a single value. 
+
+Syntax of reduce method
+
+A reduce method takes 2 arguments: a reducer **callback** function and an optional initial value.
+
+```array.reduce(reducer [, initialValue]) ```
+
+
+Syntax of **reducer** method:
+
+``` function reducer(accumulator, currentValue, currentIndex, array){} ```
+
+Here **accumulator** is the value returned from the previous call of the reducer function. 
+
+Check below, how **accumulator** is working here: 
+
+```
+let numbers = [1, 2, 3];
+
+let sum = numbers.reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue;
+});
+console.log(sum);
+```
+
+Second **reduce** example: 
+
+We have an array of shoppingCart here: 
+
+```
+let shoppingCart = [{
+        product: 'phone',
+        qty: 1,
+        price: 699
+    },
+    {
+        product: 'Screen Protector',
+        qty: 1,
+        price: 9.98
+    },
+    {
+        product: 'Memory Card',
+        qty: 2,
+        price: 20.99
+    }
+];
+
+```
+
+```
+let total = shoppingCart.reduce(function (acc, curr) {
+    return acc + curr.qty * curr.price;
+},0);
+
+console.log(total);
+```
+
+The **reduceRight()** method works in the same way as the reduce() method, but in the opposite direction.
+
+---
+
+**IIFE (Immediately invoked function expressions)**
+
+The following expression is called an immediately invoked function expression (IIFE) because the function is created as an expression and executed immediately:
+
+```
+(function(a,b){
+        return a + b;
+})(10,20);
+```
+
+Why?
+1. So that functions and variables dont pollute the global object. All functions and variables inside an immediately invoked function expression 
+
+An IIFE can have a name. However, it cannot be invoked again after execution:
+
+---
+
+**Javascript Objects**
+
+
+In JavaScript, an object is an unordered collection of key-value pairs. Each key-value pair is called a **property**.
+
+
+The key of a property can be a string and the value of a property can be any valid JavaScript value e.g., a string, a number, an array, and even a function.
+
+When a function is a property of of an object, it’s often called a method.
+
+Unlike objects in other programming languages such as Java and C++, you can add a property to an object after object creation.
+
+Besides data, objects can have actions. The actions of objects are known as methods.
+
+
+```
+let person = {
+    firstName: 'John',
+    lastName: 'Doe'
+};
+
+person.greet = function () {
+    console.log('Hello!');
+}
+person.greet();
+```
+
+Output: 
+
+```
+Hello!
+
+```
+
+
+
+
+**Javascript Object Properties**
+
+
+```
+let person = {
+    firstName: 'John',
+    lastName: 'Doe'
+}
+
+Object.defineProperty(person, 'fullName', {
+    get: function () {
+        return this.firstName + ' ' + this.lastName;
+    },
+    set: function (value) {
+        let parts = value.split(' ');
+        if (parts.length == 2) {
+            this.firstName = parts[0];
+            this.lastName = parts[1];
+        } else {
+            throw 'Invalid name format';
+        }
+    }
+});
+
+console.log(person.fullName);
+```
+Output: 
+```
+John Doe
+```
+
+
+
+```
+let person = {
+    firstName: 'John',
+    lastName: 'Doe'
+};
+
+person.greet = function () {
+    console.log('Hello!');
+}
+person.greet();
+```
