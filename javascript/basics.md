@@ -229,7 +229,7 @@ The **reduceRight()** method works in the same way as the reduce() method, but i
 
 ---
 
-**IIFE (Immediately invoked function expressions)**
+**🤚IIFE (Immediately invoked function expressions)**
 
 The following expression is called an immediately invoked function expression (IIFE) because the function is created as an expression and executed immediately:
 
@@ -246,7 +246,7 @@ An IIFE can have a name. However, it cannot be invoked again after execution:
 
 ---
 
-**Javascript Objects**
+**🤚Javascript Objects**
 
 
 In JavaScript, an object is an unordered collection of key-value pairs. Each key-value pair is called a **property**.
@@ -260,7 +260,6 @@ Unlike objects in other programming languages such as Java and C++, you can add 
 
 Besides data, objects can have actions. The actions of objects are known as methods.
 
-
 ```
 let person = {
     firstName: 'John',
@@ -270,20 +269,52 @@ let person = {
 person.greet = function () {
     console.log('Hello!');
 }
-person.greet();
 ```
 
 Output: 
 
-```
-Hello!
+```Hello!```
+
+In ES6, it is like: 
 
 ```
+greet() {
+        console.log('Hello, World!');
+    }
+```
+
+**🤚Javascript Object Properties**
+
+There are two types of object properties: **data properties*** and **accessor properties**.
 
 
+1) Data properties
 
+The following example creates a person object and adds the ssn property to it using the Object.defineProperty() method:
 
-**Javascript Object Properties**
+```
+'use strict';
+
+let person = {};
+Object.defineProperty(person, 'ssn', {
+    configurable: false,
+    value: '012-38-9119'
+});
+delete person.ssn;
+```
+
+As configurable is set to false  `delete person.ssn;` and it is strict mode, this leads to: 
+```
+TypeError: Cannot delete property 'ssn' of #<Object>
+
+``` 
+
+ 2) Accessor properties
+
+Similar to data properties, accessor properties also have ```[[Configurable]]``` and ```[[Enumerable]]``` attributes.
+
+But the accessor properties have the ```[[Get]]``` and ```[[Set]]``` attributes instead of ```[[Value]```] and ```[[Writable]]```
+
 
 
 ```
@@ -314,8 +345,6 @@ Output:
 John Doe
 ```
 
-
-
 ```
 let person = {
     firstName: 'John',
@@ -327,3 +356,20 @@ person.greet = function () {
 }
 person.greet();
 ```
+
+
+A property can be **defined directly on an object** or **indirectly via the Object.defineProperty() or Object.defineProperties() methods**. These methods can be used to change the attributes of a property.
+
+*Enough with these boring Object properties*
+
+---
+
+**🤚For In Loop**
+
+For in loop is used to iterate over enumerable properties of an object. 
+
+Avoid using ```for...in```  loop to iterate over elements of an array, especially when the index order is important.
+
+**Javascript Constructors**
+
+JavaScript constructor function is a regular function used to create multiple similar objects.

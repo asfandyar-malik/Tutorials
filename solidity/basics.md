@@ -29,6 +29,7 @@ A **Solidity contract** is a collection of code (its functions) and data (its st
 
 **Address** holds the 20 byte value representing the size of an Ethereum address. Address is a datatype in solidity. 
 
+functions which are **public** can be accessed by anyone who is connected to blockchain.  
 
 Use remix.ethereum as IDE to create Smart contracts in Ethereum. 
 
@@ -68,11 +69,13 @@ contract test {
    function setBook() public {
       book = Book('Learn Java', 'TP', 1);
    }
-   function getBookId() public view returns (uint) {
+   function getBookId() public view returns (uint){
       return book.book_id;
    }
 }
 ```
+
+Solidity provides a datasctructure called Mapping. 
 
 **mapping** is like **associative array** or like hash map in other languages
 
@@ -82,10 +85,11 @@ In Solidity, no way to figure out size of array, so we have to keep track of it 
 
 
 **Modifiers**
+Who are allowed to access the method.  
 
 **public modifier**: can be used by external callers. 
 
-**internal functions**: external callers cant use them. 
+**internal functions**: external callers cant use them. Different visibility of functions.  
 
 **Custom modifiers**: we can create our own modifiers. 
 
@@ -96,8 +100,14 @@ modifier onlyOwner() {
 ```
 *require has to be true otherwise error thrown*
 
-**msg.sender** is very important. 
+**msg.sender** tells us the account which is calling a specific function. 
 
 Use Epoch time in ethereum as well. 
 
 ```block.timestamp``` is used to find ```now()```
+
+
+Contract owner is different from Token Owner
+
+
+**Truffle** is a world-class development environment, testing framework and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM), aiming to make life as a developer easier. Truffle is widely considered the most popular tool for blockchain application development with over 1.5 million lifetime downloads.
