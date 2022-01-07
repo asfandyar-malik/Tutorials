@@ -110,4 +110,34 @@ Use Epoch time in ethereum as well.
 Contract owner is different from Token Owner
 
 
+A **Modifier** allows you to control the behavior of your smart contract functions. It includes a variety of use cases, such as restricting who has the ability to run a given function, unlocking functions at a certain time frame, etc
+
+
 **Truffle** is a world-class development environment, testing framework and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM), aiming to make life as a developer easier. Truffle is widely considered the most popular tool for blockchain application development with over 1.5 million lifetime downloads.
+
+On mintable or rarible, you are the token owner and not the contract owner. Only the contract owner can set up royalties. 
+
+
+ERC: Ethereum request for comments. It features a standard set of rules for creating tokens on Ethereum. 
+
+
+**ERC721** tokens have become quite popular in recent times with the radically growing attention towards NFTs. As a matter of fact, the basic nature of ERC-721 tokens is one of the formidable factors for ERC20 vs. ERC721 differences. ERC-721 tokens are also **referred to as NFTs**. 
+
+The difference between **ERC20 and ERC721** tokens is that every token in the ERC721 contract is unique. It’s like deploying many ER20 contracts, just under one address. ERC20 Tokens can be sent from one address to another. This is a very fundamental property why ERC20 tokens are so popular.
+
+ERC721 transferFrom function: 
+
+```
+ function transferFrom(address from, address to, uint256 tokenId) external;
+```
+
+**Non Fungible**: a unique digital identifier that cannot be copied, substituted, or subdivided. 
+
+
+
+**Physical and Digital Example**
+
+An interesting ERC721 example which brings the digital and physical world together: https://medium.com/aisthisi/aisthisi-technical-deep-dive-part-1-4f708da67cbd 
+
+
+**ABI** The Contract Application Binary Interface (ABI) is the standard way to interact with contracts in the Ethereum ecosystem, both from outside the blockchain and for contract-to-contract interaction
